@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </main> 
     <script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script>
 </body>
 </html><?php /**PATH /home/gabriel/code/validacao/resources/views/novocliente.blade.php ENDPATH**/ ?>
