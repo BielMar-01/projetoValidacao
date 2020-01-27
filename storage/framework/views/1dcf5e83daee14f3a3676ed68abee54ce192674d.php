@@ -47,6 +47,16 @@
                             <button class="btn btn-danger btn-sm" type="cancel">Cancelar</button>
                         </form>
                     </div>
+                    <?php if($errors->any()): ?>
+                        <div class="card-footer">
+                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php echo e($error); ?>
+
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
