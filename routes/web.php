@@ -13,4 +13,5 @@
 
 Route::get('/', 'ClienteControlador@index');
 Route::get('/novocliente', 'ClienteControlador@create');
+Route::get('/cliente', 'ClienteControlador@store');
 
