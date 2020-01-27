@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\ClienteControlador;
 use Illuminate\Http\Request;
 
-class ClienteControladorController extends Controller
+use App\Cliente;
+
+class ClienteControlador extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class ClienteControladorController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = Cliente::all();
+        return view('clientes', compact('clientes'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ClienteControladorController extends Controller
      */
     public function create()
     {
-        //
+        return view('novocliente');
     }
 
     /**
@@ -41,10 +43,10 @@ class ClienteControladorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ClienteControlador  $clienteControlador
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(ClienteControlador $clienteControlador)
+    public function show($id)
     {
         //
     }
@@ -52,10 +54,10 @@ class ClienteControladorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ClienteControlador  $clienteControlador
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(ClienteControlador $clienteControlador)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +66,10 @@ class ClienteControladorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ClienteControlador  $clienteControlador
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClienteControlador $clienteControlador)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +77,10 @@ class ClienteControladorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ClienteControlador  $clienteControlador
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClienteControlador $clienteControlador)
+    public function destroy($id)
     {
         //
     }

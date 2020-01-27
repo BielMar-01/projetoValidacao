@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
     <title>Cadastro de Clientes</title>
 
@@ -12,7 +12,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
 </head>
 <body>
     <main role="main">
@@ -36,15 +36,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($clientes as $c)
+                                <?php $__currentLoopData = $clientes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td>{{ $c->id }}</td>
-                                        <td>{{ $c->nome }}</td>
-                                        <td>{{ $c->endereco }}</td>
-                                        <td>{{ $c->idade }}</td>
-                                        <td>{{ $c->email }}</td>
+                                        <td><?php echo e($c->id); ?></td>
+                                        <td><?php echo e($c->nome); ?></td>
+                                        <td><?php echo e($c->endereco); ?></td>
+                                        <td><?php echo e($c->idade); ?></td>
+                                        <td><?php echo e($c->email); ?></td>
                                     </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>
@@ -52,6 +52,6 @@
             </div>
         </div>
     </main>
-    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    <script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script>
 </body>
-</html>
+</html><?php /**PATH /home/gabriel/code/validacao/resources/views/clientes.blade.php ENDPATH**/ ?>
