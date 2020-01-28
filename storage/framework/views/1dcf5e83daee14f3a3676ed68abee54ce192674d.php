@@ -39,15 +39,33 @@
                             </div>
                             <div class="form-group">
                                 <label for="idade">Idade do Cliente</label>
-                                <input type="number" id="idade" class="form-control" name="idade" placeholder="Idade do Cliente"> 
+                                <input type="number" id="idade" class="form-control <?php echo e($errors->has('idade') ? 'is-invalid' : ''); ?>" name="idade" placeholder="Idade do Cliente">
+                                <?php if($errors->has('idade')): ?>
+                                    <div class="invalid-feedback">
+                                        <?php echo e($errors->first('idade')); ?>
+
+                                    </div>
+                                <?php endif; ?> 
                             </div>
                             <div class="form-group">
                                 <label for="endereco">Endereço do Cliente</label>
-                                <input type="text" id="endereco" class="form-control" name="endereco" placeholder="Endereco do Cliente"> 
+                                <input type="text" id="endereco" class="form-control <?php echo e($errors->has('endereco') ? 'is-invalid' : ''); ?>" name="endereco" placeholder="Endereco do Cliente">
+                                <?php if($errors->has('endereco')): ?>
+                                    <div class="invalid-feedback">
+                                        <?php echo e($errors->first('endereco')); ?>
+
+                                    </div>
+                                <?php endif; ?> 
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail do Cliente</label>
-                                <input type="text" id="email" class="form-control" name="email" placeholder="E-mail do Cliente"> 
+                                <input type="text" id="email" class="form-control <?php echo e($errors->has('email') ? 'is-invalid' : ''); ?>" name="email" placeholder="E-mail do Cliente">
+                                <?php if($errors->has('email')): ?>
+                                    <div class="invalid-feedback">
+                                        <?php echo e($errors->first('email')); ?>
+
+                                    </div>
+                                <?php endif; ?> 
                             </div>
                             <button class="btn btn-primary btn-sm" type="submit">Salvar</button>
                             <button class="btn btn-danger btn-sm" type="cancel">Cancelar</button>
